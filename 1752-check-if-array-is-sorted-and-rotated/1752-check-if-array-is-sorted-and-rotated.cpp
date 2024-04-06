@@ -14,6 +14,6 @@ public:
         if(k>1){
             return false;
         }
-        return k<=1;
+        return true;
     }
 };
