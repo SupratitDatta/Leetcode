@@ -11,6 +11,9 @@ public:
         if(a[n-1]>a[0]){
             k++;
         }
+        if(k>1){
+            return false;
+        }
         return k<=1;
     }
 };
