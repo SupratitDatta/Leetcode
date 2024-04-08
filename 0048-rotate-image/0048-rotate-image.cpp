@@ -4,11 +4,11 @@ public:
         int n = matrix.size(); 
         
         for (int i=0; i < n/2; i++) {
-            std::swap(matrix[i], matrix[n-i-1]); 
+            swap(matrix[i], matrix[n-i-1]); 
         }
         for (int i=0; i<n; i++) {
             for (int j = i+1; j<n; j++) {
-                std::swap(matrix[i][j], matrix[j][i]); 
+                swap(matrix[i][j], matrix[j][i]); 
             }
         }
     }
