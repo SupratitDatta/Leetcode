@@ -16,8 +16,8 @@ public:
     vector<vector<int>> generate(int numRows) {
         vector<vector<int>> v;
 
-        for (int row = 1; row <= numRows; row++) {
-            v.push_back(generateRow(row));
+        for (int i=1; i<=numRows; i++) {
+            v.push_back(generateRow(i));
         }
         return v;
     }
