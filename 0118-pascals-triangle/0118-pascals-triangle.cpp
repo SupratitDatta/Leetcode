@@ -13,10 +13,10 @@ public:
         return ansRow;
     }
 
-    vector<vector<int>> generate(int n) {
+    vector<vector<int>> generate(int numRows) {
         vector<vector<int>> v;
 
-        for (int row = 1; row <= n; row++) {
+        for (int row = 1; row <= numRows; row++) {
             v.push_back(generateRow(row));
         }
         return v;
