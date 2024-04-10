@@ -1,16 +1,16 @@
 class Solution {
 public:
     int maxProduct(vector<int>& nums) {
-        if(nums.size()==1){
-            return nums[0];
-        }
-        int x=0,y=0,k=0;
-        for(int i=0; i<nums.size(); i++){
-            int m = max(max(x*nums[i], y*nums[i]), nums[i]);
-            y = min(min(x*nums[i], y*nums[i]), nums[i]);
+        int x = nums[0], y = nums[0], k = nums[0];
+
+        for (int i = 1; i < nums.size(); i++) {
+            int m = max({nums[i], x * nums[i], y * nums[i]});
+            y = min({nums[i], x * nums[i], y * nums[i]});
             x = m;
-            k = max(k,x);
+
+            k = max(k, x);
         }
+
         return k;
     }
 };
