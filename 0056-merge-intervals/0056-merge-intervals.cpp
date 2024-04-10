@@ -6,13 +6,12 @@ public:
         vector<vector<int>> v;
 
         for(int i=0; i<intervals.size(); i++){
-            vector<int> k = intervals[i];
-            while(i < intervals.size() && k[1] >= intervals[i][0]){
-                k[1] = max(k[1],intervals[i][1]);
-                i++;
+            if(v.empty() || intervals[i][0] > v.back()[1]){
+                v.push_back(intervals[i]);
             }
-            if(i < intervals.size() && k != intervals[i]) i--;
-            v.push_back(k);
+            else{
+                v.back()[1] = max(v.back()[1], intervals[i][1]);
+            }
         }
         return v;
     }
