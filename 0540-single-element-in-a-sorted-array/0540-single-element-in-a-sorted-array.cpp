@@ -1,7 +1,6 @@
 class Solution {
 public:
     int singleNonDuplicate(vector<int>& nums) {
-        int s=0, e=nums.size()-1, mid;
 
         if(nums.size() == 1){
             return nums[0];
@@ -12,6 +11,7 @@ public:
         if(nums[nums.size()-1] != nums[nums.size()-2]){
             return nums[nums.size()-1];
         }
+        int s=0, e=nums.size()-1, mid;
         
         while(s<=e){
             mid = s+(e-s)/2;
