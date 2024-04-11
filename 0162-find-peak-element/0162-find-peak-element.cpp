@@ -10,7 +10,7 @@ public:
         if(nums[nums.size()-1] > nums[nums.size()-2]){
             return nums.size()-1;
         }
-        int s=0, e=nums.size()-1,mid;
+        int s=1, e=nums.size()-2,mid;
         while(s<=e){
             mid = s+(e-s)/2;
             if(nums[mid]>nums[mid-1] && nums[mid]>nums[mid+1]){
