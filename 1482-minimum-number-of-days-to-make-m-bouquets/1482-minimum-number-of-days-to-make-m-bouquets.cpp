@@ -21,11 +21,8 @@ public:
         if (val > n){
             return -1;
         } 
-        int minimum = INT_MAX, maximum = INT_MIN;
-        for (int i = 0; i < n; i++) {
-            minimum = min(minimum, bloomDay[i]);
-            maximum = max(maximum, bloomDay[i]);
-        }
+        int minimum = *min_element(bloomDay.begin(), bloomDay.end());
+        int maximum = *max_element(bloomDay.begin(), bloomDay.end());
 
         int s = minimum, e = maximum;
         while(s <= e){
