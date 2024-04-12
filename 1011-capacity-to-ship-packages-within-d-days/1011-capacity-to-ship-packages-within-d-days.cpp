@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int daysneeded(vector<int>& weights, int c){
+    int dneeded(vector<int>& weights, int c){
         int d = 1, l = 0;
         for (int i=0; i<weights.size(); i++) {
             if (l+weights[i] > c){
@@ -18,7 +18,7 @@ public:
         int e = accumulate(weights.begin(), weights.end(), 0);
         while(s <= e){
             int mid = s+(e-s)/2;
-            if (daysneeded(weights, mid) <= days) {
+            if (dneeded(weights, mid) <= days) {
                 e = mid-1;
             }
             else {
