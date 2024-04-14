@@ -1,14 +1,8 @@
-#include <string>
-#include <vector>
-#include <algorithm>
-
-using namespace std;
-
 class Solution {
 public:
     string reverseWords(string s) {
         vector<string> v;
-        string k;
+        string k,x;
         for (auto c : s) {
             if (c != ' ') {
                 k += c;
@@ -23,9 +17,9 @@ public:
             v.push_back(k);
         }
         reverse(v.begin(), v.end());
-        string x;
-        for (auto it : v) {
-            x += it;
+        
+        for (auto i : v) {
+            x += i;
             x += ' ';
         }
         if (!x.empty()) {
