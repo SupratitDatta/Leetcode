@@ -14,11 +14,11 @@ ListNode* reverseLinkedList(ListNode* head) {
     if (head == NULL || head->next == NULL) {
         return head; 
     }
-    ListNode* newHead = reverseLinkedList(head->next);
+    ListNode* newh = reverseLinkedList(head->next);
     ListNode* front = head->next;
     front->next = head;
     head->next = NULL;
-    return newHead;
+    return newh;
 }
     bool isPalindrome(ListNode* head) {
         if (head == NULL || head->next == NULL) {
@@ -31,18 +31,18 @@ ListNode* reverseLinkedList(ListNode* head) {
             slow = slow->next;
             fast = fast->next->next;
         }
-        ListNode* newHead = reverseLinkedList(slow->next);
+        ListNode* newh = reverseLinkedList(slow->next);
         ListNode* first = head;
-        ListNode* second = newHead;
+        ListNode* second = newh;
         while (second != NULL) {
             if (first->val != second->val) {
-                reverseLinkedList(newHead);
+                reverseLinkedList(newh);
                 return false;
             }
             first = first->next;
             second = second->next;
         }
-        reverseLinkedList(newHead);
+        reverseLinkedList(newh);
         return true;
     }
 };
