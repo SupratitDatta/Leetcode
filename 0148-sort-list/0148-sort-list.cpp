@@ -3,16 +3,16 @@
  * struct ListNode {
  *     int val;
  *     ListNode *next;
- *     ListNode() : val(0), next(nullptr) {}
- *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode() : val(0), next(nulltemp) {}
+ *     ListNode(int x) : val(x), next(nulltemp) {}
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
 class Solution {
 public:
     ListNode* mergelist(ListNode* l1, ListNode* l2) {
-        ListNode* ptr = new ListNode(0);
-        ListNode* curr = ptr;
+        ListNode* temp = new ListNode(0);
+        ListNode* curr = temp;
 
         while (l1 != NULL && l2 != NULL) {
             if (l1->val <= l2->val) {
@@ -32,7 +32,7 @@ public:
             curr->next = l2;
             l2 = l2->next;
         }
-        return ptr->next;
+        return temp->next;
     }
     ListNode* sortList(ListNode* head) {
         if (head == NULL || head->next == NULL) {
