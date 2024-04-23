@@ -12,9 +12,9 @@ public:
         if (headA == nullptr || headB == nullptr) {
             return nullptr;
         }
+        
         ListNode* tempa = headA;
         ListNode* tempb = headB;
-
         while (tempa != tempb) {
             tempa = (tempa == nullptr) ? headB : tempa->next;
             tempb = (tempb == nullptr) ? headA : tempb->next;
