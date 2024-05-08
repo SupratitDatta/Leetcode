@@ -14,17 +14,17 @@ public:
         }
         vector<string> x = {"Gold Medal", "Silver Medal", "Bronze Medal"};
         vector<string> rank(n, "");
-        int place = 1;
+        int k = 1;
         for (int i = M; i >= 0; i--) {
             if (score_idx[i] != 0) {
                 int j = score_idx[i] - 1;
-                if (place < 4) {
-                    rank[j] = x[place - 1];
+                if (k < 4) {
+                    rank[j] = x[k - 1];
                 } 
                 else {
-                    rank[j] = to_string(place);
+                    rank[j] = to_string(k);
                 }
-                place++;
+                k++;
             }
         }
         return rank;
